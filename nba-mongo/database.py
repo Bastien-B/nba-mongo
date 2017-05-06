@@ -11,6 +11,10 @@ teams_collection = db.teams
 players_collection = db.players
 
 
+def print_teams_collection():
+    teams_documents = teams.build_teams_documents()
+    print(teams_documents)
+
 def generate_teams_collection():
     teams_documents = teams.build_teams_documents()
     result = teams_collection.insert_many(teams_documents)
