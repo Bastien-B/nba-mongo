@@ -11,7 +11,7 @@ def build_players_ids():
         'Season': constants.CURRENT_SEASON,
         'IsOnlyCurrentSeason': 1
     }
-    common_all_players_request = NbaRequest(constants.COMMON_ALL_PLAYERS, common_all_players_params)
+    common_all_players_request = NbaRequest(constants.COMMON_ALL_PLAYERS_ENDPOINT, common_all_players_params)
     common_all_players = common_all_players_request.send()
 
     if common_all_players:
@@ -56,7 +56,7 @@ def build_players_documents():
         common_player_info_params = {
             'PlayerID': player_id
         }
-        common_player_info_request = NbaRequest(constants.COMMON_PLAYER_INFO, common_player_info_params)
+        common_player_info_request = NbaRequest(constants.COMMON_PLAYER_INFO_ENDPOINT, common_player_info_params)
         common_player_meta = common_player_info_request.send()
 
         if common_player_meta:

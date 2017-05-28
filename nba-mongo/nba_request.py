@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import constants
 import sys
+
 import requests
+
+import constants
 
 class NbaRequest:
 
