@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from teams import teams_builder
-from players import players
+from players import players_builder
 
 from pymongo import MongoClient
 
@@ -19,7 +19,7 @@ def generate_teams_collection():
 
 
 def generate_players_collection():
-    players_documents = players.build_players_documents()
+    players_documents = players_builder.build_all_players_documents()
     result = players_collection.insert_many(players_documents)
 
     print("Inserted successfully {0} players.".format(len(result.inserted_ids)))
