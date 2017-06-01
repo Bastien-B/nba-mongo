@@ -41,5 +41,6 @@ def build_player_document(player_id):
     """
     player_document = {}
     players_fetcher.fetch_common_player_info(player_id, player_document)
+    players_fetcher.fetch_player_stats(player_id, player_document)
 
     return player_document

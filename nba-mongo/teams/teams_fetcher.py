@@ -82,7 +82,7 @@ def fetch_team_stats(team_id, team_document):
     For each category, two modes of statistics are fetched: per game and totals.
 
     Keyword argument:
-    team_id -- The id of the NBA team to fetch seasons statistics.
+    team_id -- The id of the NBA team to fetch seasons statistics for.
     team_document -- The NBA team document to populate.
     """
     team_document['stats'] = {}

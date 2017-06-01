@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
 
-import database
+import configparser
+
+from nba_db_client import NbaDBClient
 
 if __name__ == '__main__':
-    print('Creating teams collection...')
-    database.generate_teams_collection()
 
-    #print('Creating  players database...')
-    #database.generate_players_collection()
+    config = configparser.ConfigParser()
+    config.read('database.cfg')
+
+    host = config['database']['host']
+    port = int(config['database']['port'])
+    db_name = config['database']['db_name']
+    teams_collection = config['database']['teams_collection']
+    players_collection = config['database']['players_collection']
+
+    client = NbaDBClient(host,
+                         port,
+                         db_name,
+                         teams_collection,
+                         players_collection)
+
+    client.generate_teams_collection()
+    client.generate_players_collection()
